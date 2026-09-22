@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Toc toc...</title>
@@ -10,78 +13,119 @@
 <style>
 
 /* =========================================================
+
    BASE
-========================================================= */
+
+\========================================================= */
 
 * {
+
     box-sizing: border-box;
+
 }
 
 body {
+
     margin: 0;
+
     width: 100vw;
+
     height: 100vh;
+
     overflow: hidden;
 
     font-family: Georgia, "Times New Roman", serif;
+
     color: #4c342c;
 
     background:
+
         radial-gradient(
+
             circle at 50% 35%,
+
             #fffaf0 0%,
+
             #f8ecd9 38%,
+
             #ead7be 72%,
+
             #d2b89c 100%
+
         );
+
 }
 
 body::before {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
 
     background:
+
         radial-gradient(
+
             circle at 20% 15%,
+
             rgba(255,255,255,.65),
+
             transparent 30%
+
         ),
+
         radial-gradient(
+
             circle at 80% 80%,
+
             rgba(120,60,45,.08),
+
             transparent 40%
+
         );
+
 }
 
-
 /* =========================================================
+
    INTRO
-========================================================= */
+
+\========================================================= */
 
 #inicio {
+
     position: absolute;
+
     inset: 0;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     z-index: 50;
 
     transition: opacity 1s ease;
+
 }
 
 .introContenido {
-    text-align: center;
-    padding: 25px;
-}
 
+    text-align: center;
+
+    padding: 25px;
+
+}
 
 /* toc toc */
 
 #toc {
+
     font-size: clamp(1.7rem, 5vw, 2.5rem);
 
     letter-spacing: 10px;
@@ -91,30 +135,39 @@ body::before {
     opacity: 0;
 
     animation:
+
         aparecerToc 1.3s ease forwards;
+
 }
 
 @keyframes aparecerToc {
 
     from {
+
         opacity: 0;
+
         transform: translateY(10px);
+
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
 
 }
 
-
 /* mensaje */
 
 #mensajePuerta {
+
     margin-top: 30px;
 
     font-size:
+
         clamp(.9rem, 2.8vw, 1.05rem);
 
     letter-spacing: 1.5px;
@@ -126,14 +179,17 @@ body::before {
     transform: translateY(8px);
 
     transition:
-        opacity 1.2s ease,
-        transform 1.2s ease;
-}
 
+        opacity 1.2s ease,
+
+        transform 1.2s ease;
+
+}
 
 /* abrir */
 
 #botonAbrir {
+
     margin-top: 32px;
 
     padding: 10px 8px;
@@ -141,6 +197,7 @@ body::before {
     border: none;
 
     border-bottom:
+
         1px solid rgba(90,55,45,.45);
 
     background: transparent;
@@ -148,6 +205,7 @@ body::before {
     color: #60453b;
 
     font-family: Georgia, serif;
+
     font-size: .95rem;
 
     letter-spacing: 2px;
@@ -161,33 +219,49 @@ body::before {
     transform: translateY(8px);
 
     transition:
+
         opacity 1.2s ease,
+
         transform 1.2s ease,
+
         color .3s ease,
+
         letter-spacing .3s ease;
+
 }
 
 #botonAbrir:hover {
+
     color: #761c31;
+
     letter-spacing: 3px;
+
 }
 
 .visible {
+
     opacity: 1 !important;
+
     transform: translateY(0) !important;
+
 }
 
-
 /* =========================================================
+
    ESCENA
-========================================================= */
+
+\========================================================= */
 
 #escena {
+
     position: absolute;
+
     inset: 0;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     opacity: 0;
@@ -195,36 +269,49 @@ body::before {
     pointer-events: none;
 
     transition: opacity 1.4s ease;
+
 }
 
 .luzExterior {
+
     position: absolute;
 
     width: 540px;
+
     height: 680px;
 
     border-radius: 50%;
 
     background:
+
         radial-gradient(
+
             ellipse,
+
             rgba(255,247,216,.95),
+
             rgba(255,211,151,.25) 45%,
+
             transparent 72%
+
         );
 
     filter: blur(25px);
+
 }
 
-
 /* =========================================================
+
    MARCO
-========================================================= */
+
+\========================================================= */
 
 .marco {
+
     position: relative;
 
     width: 350px;
+
     height: 550px;
 
     padding: 15px;
@@ -232,86 +319,125 @@ body::before {
     perspective: 1300px;
 
     background:
+
         linear-gradient(
+
             90deg,
+
             #68412b,
+
             #9a6948 20%,
+
             #74482f 50%,
+
             #a77550 80%,
+
             #5d3927
+
         );
 
     border-radius: 5px 5px 2px 2px;
 
     box-shadow:
+
         0 18px 45px rgba(83,50,35,.28),
+
         0 4px 8px rgba(70,40,25,.18);
+
 }
 
-
 /* =========================================================
+
    INTERIOR
-========================================================= */
+
+\========================================================= */
 
 .interior {
+
     position: absolute;
 
     top: 15px;
+
     left: 15px;
 
     width: calc(100% - 30px);
+
     height: calc(100% - 30px);
 
     overflow: hidden;
 
     background:
+
         radial-gradient(
+
             circle at 50% 35%,
+
             #fff9e5 0%,
+
             #fae8c1 38%,
+
             #eac994 70%,
+
             #ad7d56 100%
+
         );
+
 }
 
 .interior::before {
+
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
+
         linear-gradient(
+
             120deg,
+
             rgba(255,255,255,.38),
+
             transparent 42%
+
         );
 
     z-index: 1;
 
     pointer-events: none;
+
 }
 
-
 /* =========================================================
+
    RAMO MAESTRO
-========================================================= */
+
+\========================================================= */
 
 /*
+
    V0.9
+
    Ahora el ramo completo es UNA SOLA IMAGEN:
+
    9 rosas + funda + lazo.
 
    Ya no posicionamos rosas individualmente.
+
 */
 
 #ramo {
+
     position: absolute;
 
     left: 50%;
+
     bottom: -3px;
 
     width: 100%;
+
     height: 100%;
 
     z-index: 5;
@@ -319,58 +445,81 @@ body::before {
     opacity: 0;
 
     transform:
+
         translateX(-50%)
+
         translateY(70px)
+
         scale(.84);
 
     transform-origin:
-        center bottom;
-}
 
+        center bottom;
+
+}
 
 /* entrada del ramo completo */
 
 #ramo.ramoAparece {
+
     animation:
+
         entrarRamo 1.7s
+
         cubic-bezier(.18,.75,.24,1)
+
         forwards;
+
 }
 
 @keyframes entrarRamo {
 
     0% {
+
         opacity: 0;
 
         transform:
+
             translateX(-50%)
+
             translateY(70px)
+
             scale(.84);
+
     }
 
     100% {
+
         opacity: 1;
 
         transform:
+
             translateX(-50%)
+
             translateY(0)
+
             scale(1);
+
     }
 
 }
 
-
 /* =========================================================
+
    IMAGEN DEL RAMO
-========================================================= */
+
+\========================================================= */
 
 #ramoMaestro {
+
     position: absolute;
 
     left: 50%;
+
     bottom: 10%;
 
     width: 98%;
+
     height: auto;
 
     max-height: 98%;
@@ -378,41 +527,57 @@ body::before {
     object-fit: contain;
 
     transform:
+
         translateX(-50%);
 
     transform-origin:
+
         center bottom;
 
     z-index: 5;
 
     /*
+
        Sombra ligera para integrarlo
+
        con la iluminación interior.
+
     */
 
     filter:
+
         drop-shadow(
+
             0 10px 10px
+
             rgba(70,40,25,.20)
+
         );
 
     user-select: none;
+
     pointer-events: none;
+
 }
 
-
 /* =========================================================
+
    TARJETA
-========================================================= */
+
+\========================================================= */
 
 #tarjeta {
+
     position: absolute;
 
     left: 50%;
 
     /*
+
        La tarjeta nace aproximadamente
+
        desde el centro del ramo.
+
     */
 
     bottom: 1%;
@@ -422,150 +587,211 @@ body::before {
     width: 58%;
 
     padding:
+
         12px 10px 10px;
 
     background:
+
         #fffaf0;
 
     color:
+
         #6a4938;
 
     border:
+
         1px solid rgba(255,255,255,.95);
 
     border-radius:
+
         3px;
 
     box-shadow:
+
         0 8px 18px
+
         rgba(73,40,30,.25);
 
     text-align:
+
         center;
 
     opacity: 0;
 
     transform:
+
         translate(-50%, 80%)
+
         rotate(-5deg);
 
     pointer-events: none;
-}
 
+}
 
 /* salida de la tarjeta */
 
 #tarjeta.tarjetaAparece {
+
     animation:
+
         salirTarjeta 1.25s
+
         cubic-bezier(.18,.72,.2,1)
+
         forwards;
+
 }
 
 @keyframes salirTarjeta {
 
     0% {
+
         opacity: 0;
 
         transform:
+
             translate(-50%, 80%)
+
             rotate(-5deg);
+
     }
 
     100% {
+
         opacity: 1;
 
         transform:
+
             translate(-50%, -30%)
+
             rotate(-5deg);
+
     }
 
 }
 
-
 #tarjeta p {
+
     margin: 0;
 
     font-size:
+
         .94rem;
 
     line-height:
+
         1.35;
+
 }
 
 #tarjeta small {
+
     display: block;
 
     margin-top:
+
         8px;
 
     color:
+
         #94725e;
 
     font-style:
+
         italic;
+
 }
 
-
 /* =========================================================
+
    PUERTA
-========================================================= */
+
+\========================================================= */
 
 .puerta {
+
     position: absolute;
 
     top: 15px;
+
     left: 15px;
 
     width: calc(100% - 30px);
+
     height: calc(100% - 30px);
 
     z-index: 20;
 
     transform-origin:
+
         left center;
 
     background:
+
         linear-gradient(
+
             90deg,
+
             #70462e 0%,
+
             #a66c45 20%,
+
             #825237 47%,
+
             #b0784f 70%,
+
             #6b422c 100%
+
         );
 
     border:
+
         2px solid #5c3826;
 
     box-shadow:
+
         inset 0 0 25px rgba(70,35,20,.25),
+
         8px 5px 20px rgba(65,40,25,.25);
 
     transition:
+
         transform 2.8s
+
         cubic-bezier(.42,.05,.18,1);
+
 }
 
 .puerta::before {
+
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     opacity: .18;
 
     background:
+
         repeating-linear-gradient(
+
             90deg,
+
             transparent 0px,
+
             transparent 22px,
+
             rgba(60,25,10,.22) 23px,
+
             transparent 25px
+
         );
+
 }
 
 .panel {
+
     position: absolute;
 
     left: 13%;
@@ -573,162 +799,368 @@ body::before {
     width: 74%;
 
     border:
+
         2px solid rgba(80,40,20,.38);
 
     box-shadow:
+
         inset 0 0 12px rgba(80,40,20,.18),
+
         0 1px 1px rgba(255,230,190,.22);
+
 }
 
 .panel1 {
+
     top: 10%;
+
     height: 34%;
+
 }
 
 .panel2 {
+
     bottom: 10%;
+
     height: 34%;
+
 }
 
 .picaporte {
+
     position: absolute;
 
     right: 24px;
+
     top: 50%;
 
     width: 17px;
+
     height: 17px;
 
     border-radius: 50%;
 
     background:
+
         radial-gradient(
+
             circle at 35% 30%,
+
             #fff0ad,
+
             #c79b4f 30%,
+
             #795526 65%,
+
             #493116
+
         );
 
     box-shadow:
+
         0 1px 6px rgba(50,30,10,.4);
 
     transition:
+
         transform .5s ease;
+
 }
 
 .puertaAbierta {
+
     transform:
+
         rotateY(-108deg);
+
 }
 
 .picaporteGira {
+
     transform:
+
         rotate(90deg);
+
 }
 
-
 /* =========================================================
+
    MÓVIL
-========================================================= */
+
+\========================================================= */
 
 @media (max-width: 600px) {
 
     .marco {
+
         width: 280px;
+
         height: 455px;
+
     }
 
     #ramo {
+
         width: 100%;
+
         height: 100%;
+
     }
 
     #ramoMaestro {
+
         width: 98%;
+
         max-height: 98%;
+
     }
 
     #tarjeta {
-        width: 68%;
 
-        bottom: 39%;
+        width: 62%;
+
+        bottom: 1%;
 
         padding:
+
             10px 8px;
+
     }
 
     #tarjeta p {
+
         font-size:
+
             .78rem;
+
     }
 
 }
 
-
 @media (max-height: 570px) {
 
     .marco {
+
         height:
+
             min(455px, 82vh);
+
+    }
+
+}
+
+/* =========================================================
+
+   ACCESIBILIDAD
+
+\========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+
+    *::before,
+
+    *::after {
+
+        animation-duration:
+
+            .01ms !important;
+
+        transition-duration:
+
+            .01ms !important;
+
     }
 
 }
 
 
 /* =========================================================
-   ACCESIBILIDAD
+   ACCESO / CONTRASEÑA
 ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration:
-            .01ms !important;
-
-        transition-duration:
-            .01ms !important;
-    }
-
+#acceso,
+#expirado {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    background: radial-gradient(circle at 50% 35%, #fffaf0 0%, #f8ecd9 38%, #ead7be 72%, #d2b89c 100%);
+    transition: opacity .9s ease;
 }
 
-</style>
-</head>
+.accesoContenido,
+.expiradoContenido {
+    width: min(85%, 360px);
+    text-align: center;
+    padding: 30px 25px;
+    color: #4c342c;
+}
 
+.accesoTitulo {
+    margin-bottom: 12px;
+    font-size: 1.45rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.accesoSubtitulo {
+    margin-bottom: 28px;
+    font-size: .9rem;
+    line-height: 1.5;
+    color: #80655a;
+}
+
+#clave {
+    width: 190px;
+    padding: 11px 8px;
+    border: none;
+    border-bottom: 1px solid rgba(90,55,45,.45);
+    outline: none;
+    background: transparent;
+    color: #4c342c;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#clave::placeholder { color: #a78c80; }
+
+#entrar {
+    display: block;
+    margin: 25px auto 0;
+    padding: 9px 8px;
+    border: none;
+    border-bottom: 1px solid rgba(90,55,45,.45);
+    background: transparent;
+    color: #60453b;
+    font-family: Georgia, serif;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color .3s ease, letter-spacing .3s ease;
+}
+
+#entrar:hover { color: #761c31; letter-spacing: 3px; }
+
+#respuestaClave {
+    min-height: 22px;
+    margin-top: 22px;
+    font-size: .86rem;
+    font-style: italic;
+    color: #87695e;
+}
+
+#pedirPista {
+    margin-top: 15px;
+    border: none;
+    background: transparent;
+    color: #98786b;
+    font-family: Georgia, serif;
+    font-size: .78rem;
+    font-style: italic;
+    cursor: pointer;
+    opacity: .8;
+}
+
+#pedirPista:hover { opacity: 1; }
+
+#pista {
+    min-height: 20px;
+    margin-top: 12px;
+    color: #79594e;
+    font-size: .82rem;
+    font-style: italic;
+}
+
+#expirado { display: none; }
+
+.expiradoContenido p {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.expiradoContenido small {
+    display: block;
+    margin-top: 15px;
+    color: #87695e;
+    font-size: .9rem;
+    font-style: italic;
+}
+
+.rosaFinal { margin-top: 24px; font-size: 1.6rem; }
+
+</style>
+
+</head>
 
 <body>
 
+<!-- ACCESO -->
+<div id="acceso">
+    <div class="accesoContenido">
+        <div class="accesoTitulo">DEMI, SOLO TÚ, TIENES LA CLAVE</div>
+        <div class="accesoSubtitulo">Una fecha... ¿tu cumple?.</div>
+        <input type="text" id="clave" inputmode="numeric" maxlength="10"
+            placeholder="dd-mm-yyyy" autocomplete="off" aria-label="Fecha de acceso">
+        <button id="entrar">CONTINUAR</button>
+        <div id="respuestaClave" aria-live="polite"></div>
+        <button id="pedirPista">¿UNA PISTA?</button>
+        <div id="pista" aria-live="polite"></div>
+    </div>
+</div>
+
+<!-- EXPIRADO -->
+<div id="expirado">
+    <div class="expiradoContenido">
+        <p>Las rosas volverán<br>en otra edición...</p>
+        <small>Este detalle era para ti.</small>
+        <div class="rosaFinal">🌹🌹🌹🌹🌹</div>
+    </div>
+</div>
+
 
 <!-- =====================================================
+
      INTRO
-===================================================== -->
+
+\===================================================== -->
 
 <div id="inicio">
 
     <div class="introContenido">
 
         <div id="toc">
-            toc... toc... toc...
+
+           TOC... TOC... TOC...
+
         </div>
 
         <div id="mensajePuerta">
-            Parece que alguien está en la puerta...
+
+            Parece que alguien ha dejado algo en la puerta...
+
         </div>
 
         <button id="botonAbrir">
-            abrir la puerta
+
+            ABRIR PUERTA
+
         </button>
 
     </div>
 
 </div>
 
-
 <!-- =====================================================
+
      ESCENA
-===================================================== -->
+
+\===================================================== -->
 
 <div id="escena">
 
@@ -736,51 +1168,70 @@ body::before {
 
     <div class="marco">
 
-
         <!-- =============================================
+
              INTERIOR
+
         ============================================== -->
 
         <div class="interior">
 
-
             <!-- =========================================
+
                  RAMO MAESTRO
+
             ========================================== -->
 
             <div id="ramo">
 
                 <!--
+
                     Una sola imagen:
+
                     9 rosas + funda + lazo.
+
                 -->
 
                 <img
+
                     src="assets/ramo_maestro.png"
+
                     id="ramoMaestro"
+
                     alt="Ramo de nueve rosas">
 
-
                 <!-- =====================================
+
                      TARJETA
 
                      Esta permanece separada para poder
+
                      animarla después de aparecer el ramo.
+
                 ====================================== -->
 
                 <div
+
                     id="tarjeta"
+
                     role="note"
+
                     aria-hidden="true">
 
                     <p>
-                        ¿y quién dijo que tenían<br>
+
+                        ¿Quién dijo que tenían<br>
+
                         que ser amarillas?<br>
-                        Yo sé lo que a ti te gusta.
+
+                        Mejor unas que sí van contigo.
+
                     </p>
 
                     <small>
-                        - Mx
+
+                        — Mx -
+
                     </small>
 
                 </div>
@@ -789,13 +1240,16 @@ body::before {
 
         </div>
 
-
         <!-- =============================================
+
              PUERTA
+
         ============================================== -->
 
         <div
+
             class="puerta"
+
             id="puerta">
 
             <div class="panel panel1"></div>
@@ -803,8 +1257,11 @@ body::before {
             <div class="panel panel2"></div>
 
             <div
+
                 class="picaporte"
+
                 id="picaporte">
+
             </div>
 
         </div>
@@ -813,71 +1270,157 @@ body::before {
 
 </div>
 
-
 <!-- =====================================================
+
      JAVASCRIPT
-===================================================== -->
+
+\===================================================== -->
 
 <script>
 
 (() => {
+    const FECHA_LIMITE = new Date('2026-09-26T23:59:00-05:00');
+    const HASH_CLAVE = '18efe9ca6e91837a6a1e685627b4fbfbf17b942e328755b32499dbc07cc23019';
+    const acceso = document.getElementById('acceso');
+    const clave = document.getElementById('clave');
+    const entrar = document.getElementById('entrar');
+    const respuestaClave = document.getElementById('respuestaClave');
+    const pedirPista = document.getElementById('pedirPista');
+    const pista = document.getElementById('pista');
+    const expirado = document.getElementById('expirado');
+
 
     const inicio =
+
         document.getElementById('inicio');
 
     const mensaje =
+
         document.getElementById('mensajePuerta');
 
     const boton =
+
         document.getElementById('botonAbrir');
 
     const escena =
+
         document.getElementById('escena');
 
     const puerta =
+
         document.getElementById('puerta');
 
     const picaporte =
+
         document.getElementById('picaporte');
 
     const ramo =
+
         document.getElementById('ramo');
 
     const tarjeta =
-        document.getElementById('tarjeta');
 
+        document.getElementById('tarjeta');
 
     let abierto = false;
 
-
     /* -----------------------------------------
+
        INTRO
+
     ----------------------------------------- */
 
-    setTimeout(() => {
+    function iniciarExperiencia() {
+        setTimeout(() => {
+            mensaje.classList.add('visible');
+        }, 2300);
 
-        mensaje.classList.add('visible');
+        setTimeout(() => {
+            boton.classList.add('visible');
+            boton.style.pointerEvents = 'auto';
+        }, 4100);
+    }
 
-    }, 2300);
+    function mostrarExpirado() {
+        acceso.style.display = 'none';
+        inicio.style.display = 'none';
+        escena.style.display = 'none';
+        expirado.style.display = 'flex';
+    }
 
+    if (Date.now() >= FECHA_LIMITE.getTime()) {
+        mostrarExpirado();
+        return;
+    }
 
-    setTimeout(() => {
+    setTimeout(mostrarExpirado, FECHA_LIMITE.getTime() - Date.now());
 
-        boton.classList.add('visible');
+    async function sha256(texto) {
+        const datos = new TextEncoder().encode(texto);
+        const hash = await crypto.subtle.digest('SHA-256', datos);
+        return Array.from(new Uint8Array(hash))
+            .map(byte => byte.toString(16).padStart(2, '0'))
+            .join('');
+    }
 
-        boton.style.pointerEvents =
-            'auto';
+    async function comprobarClave() {
+        if (Date.now() >= FECHA_LIMITE.getTime()) {
+            mostrarExpirado();
+            return;
+        }
 
-    }, 4100);
+        const valor = clave.value.trim().replace(/\//g, '-');
+        if (!valor) {
+            respuestaClave.textContent = 'Primero intenta con una fecha.';
+            return;
+        }
 
+        const hash = await sha256(valor);
+        if (hash === HASH_CLAVE) {
+            respuestaClave.textContent = 'Esa sí. 😊😊';
+            entrar.disabled = true;
+            clave.disabled = true;
+            pedirPista.disabled = true;
 
+            setTimeout(() => {
+                acceso.style.opacity = '0';
+            }, 700);
+
+            setTimeout(() => {
+                acceso.style.display = 'none';
+                if (Date.now() < FECHA_LIMITE.getTime()) iniciarExperiencia();
+            }, 1600);
+        } else {
+            respuestaClave.textContent = 'NOP, ESA NO ES 🫥';
+        }
+    }
+
+    entrar.addEventListener('click', comprobarClave);
+    clave.addEventListener('keydown', event => {
+        if (event.key === 'Enter') comprobarClave();
+    });
+
+    const pistas = [
+        'Ese día cambió todo...',
+        '¿Qué mes es estamos?',
+        '¿Recuerdas esa noche?'
+    ];
+    let numeroPista = 0;
+    pedirPista.addEventListener('click', () => {
+        pista.textContent = pistas[Math.min(numeroPista, pistas.length - 1)];
+        if (numeroPista < pistas.length - 1) numeroPista++;
+    });
 
     /* -----------------------------------------
+
        ABRIR PUERTA
+
     ----------------------------------------- */
 
     boton.addEventListener(
+
         'click',
+
         () => {
 
             if (abierto) return;
@@ -887,110 +1430,113 @@ body::before {
             boton.disabled = true;
 
             boton.style.pointerEvents =
-                'none';
 
+                'none';
 
             /* desaparecer intro */
 
             inicio.style.opacity =
+
                 '0';
 
-
-
             setTimeout(() => {
-
 
                 /* mostrar escena */
 
                 inicio.style.display =
+
                     'none';
 
                 escena.style.opacity =
+
                     '1';
 
                 escena.style.pointerEvents =
+
                     'auto';
 
-
-
                 setTimeout(() => {
-
 
                     /* girar picaporte */
 
                     picaporte.classList.add(
+
                         'picaporteGira'
+
                     );
 
-
-
                     setTimeout(() => {
-
 
                         /* abrir puerta */
 
                         puerta.classList.add(
+
                             'puertaAbierta'
+
                         );
-
-
 
                         setTimeout(() => {
 
-
                             /*
+
                                Aparece el ramo COMPLETO.
 
                                Ya no existen rosas
+
                                individuales ni funda
+
                                independiente.
+
                             */
 
                             ramo.classList.add(
+
                                 'ramoAparece'
+
                             );
-
-
 
                             setTimeout(() => {
 
-
                                 /*
+
                                    Después aparece
+
                                    nuestra tarjeta.
+
                                 */
 
                                 tarjeta.classList.add(
+
                                     'tarjetaAparece'
+
                                 );
 
                                 tarjeta.setAttribute(
-                                    'aria-hidden',
-                                    'false'
-                                );
 
+                                    'aria-hidden',
+
+                                    'false'
+
+                                );
 
                             }, 1900);
 
-
                         }, 1800);
-
 
                     }, 550);
 
-
                 }, 850);
-
 
             }, 900);
 
         }
+
     );
 
 })();
 
 </script>
 
-
 </body>
+
 </html>
